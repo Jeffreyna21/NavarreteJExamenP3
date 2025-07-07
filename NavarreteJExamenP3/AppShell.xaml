@@ -7,9 +7,9 @@
     Shell.FlyoutBehavior="Disabled"
     Title="Jeffrey Navarrete 07/02/2005">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
+    <TabBar
+       Title="Registro" ContentTemplate="{DataTemplate Views:RegistroPage}"
+        Title="Listado" ContentTemplate="{DataTemplate Views:ListadoBDPage}" 
+        Title="Logs" ContentTemplate="{DataTemplate Views:LogsPage}" 
+    </TabBar
 </Shell>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NavarreteJExamenP3.Views.RegistroPage"
+             Title="Pagina de Registro">
+    <StackLayout Padding="20">
+        <Entry Placeholder="Nombre de Proyecto"
+               Text="{Binding.Proyecto.NombreProyecto}"
+               FontSize="24"
+               HorizontalOptions="Center" />
+        <Entry Placeholder="Nombre de Usuario"
+               x:Name="usernameEntry" />
+        <Entry Placeholder="Contraseña"
+               IsPassword="True"
+               x:Name="passwordEntry" />
+        <Button Text="Registrar"
+                Clicked="OnRegisterClicked" />
+        <Label x:Name="resultLabel"
+               TextColor="Red"
+               HorizontalOptions="Center" />
+</ContentPage>

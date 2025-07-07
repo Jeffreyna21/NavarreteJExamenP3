@@ -3,19 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NavarreteJExamenP3.Views.RegistroPage"
              Title="Pagina de Registro">
+    <ContentPage.BindingContext>
+        <vm:RegistroViewModel />
+    </ContentPage.BindingContext>
     <StackLayout Padding="20">
         <Entry Placeholder="Nombre de Proyecto"
                Text="{Binding.Proyecto.NombreProyecto}"
                FontSize="24"
                HorizontalOptions="Center" />
-        <Entry Placeholder="Nombre de Usuario"
-               x:Name="usernameEntry" />
-        <Entry Placeholder="Contraseña"
-               IsPassword="True"
-               x:Name="passwordEntry" />
-        <Button Text="Registrar"
-                Clicked="OnRegisterClicked" />
-        <Label x:Name="resultLabel"
-               TextColor="Red"
-               HorizontalOptions="Center" />
+        <Entry Placeholder="Responsable"
+               Text="{Binding.Proyecto.Responsable}"
+               />
+        <Entry Placeholder="Progreso"
+               Keyboard="Numeric"
+               Text="{Binding.Proyecto.Progreso}" />
+        <Entry Placeholder="Duracion"
+               Keyboard="Numeric"
+               Text="{Binding.Proyecto.DuracionDias}" />
+        <Button Text="Guardar"
+                Command="{Binding GuardarCommand}"
+                />
+    </StackLayout>
 </ContentPage>

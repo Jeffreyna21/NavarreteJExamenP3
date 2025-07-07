@@ -6,22 +6,30 @@
     <ContentPage.BindingContext>
         <vm:RegistroViewModel />
     </ContentPage.BindingContext>
-    <StackLayout Padding="20">
-        <Entry Placeholder="Nombre de Proyecto"
-               Text="{Binding.Proyecto.NombreProyecto}"
-               FontSize="24"
-               HorizontalOptions="Center" />
-        <Entry Placeholder="Responsable"
-               Text="{Binding.Proyecto.Responsable}"
-               />
-        <Entry Placeholder="Progreso"
-               Keyboard="Numeric"
-               Text="{Binding.Proyecto.Progreso}" />
-        <Entry Placeholder="Duracion"
-               Keyboard="Numeric"
-               Text="{Binding.Proyecto.DuracionDias}" />
-        <Button Text="Guardar"
-                Command="{Binding GuardarCommand}"
-                />
-    </StackLayout>
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+            <Label Text="Registro de Proyecto"
+                       FontSize="32"
+                       HorizontalOptions="Center" />
+            <Entry Placeholder="Nombre de Proyecto"
+                       Text="{Binding.Proyecto.NombreProyecto}"
+                       />
+            <Label Text="Responsable"
+                       FontSize="18" />
+            <Entry Placeholder="Responsable"
+                       Text="{Binding.Proyecto.Responsable}"
+                       />
+            <Label Text="Progreso" />
+            <Entry Placeholder="Progreso"
+                       Keyboard="Numeric"
+                       Text="{Binding.Proyecto.Progreso}" />
+            <Label Text="Duracion"/>
+            <Entry Placeholder="Duracion en dias"
+                       Keyboard="Numeric"
+                       Text="{Binding.Proyecto.DuracionDias}" />
+            <Button Text="Guardar"
+                    Command="{Binding GuardarCommand}"
+                    />
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

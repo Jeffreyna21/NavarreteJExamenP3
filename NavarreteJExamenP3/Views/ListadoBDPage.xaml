@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NavarreteJExamenP3.Views.ListadoBDPage"
+             Title="ListadoBDPage">
+    <ContentPage.BindingContext>
+        <vm:RegistroViewModel />
+    </ContentPage.BindingContext>
+    <CollectionView ItemsSource="{Binding Proyectos}" Margin="10">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                    <StackLayout>
+                        <Label Text="{Binding NombreProyecto}" FontAttributes="Bold" FontSize="16"/>
+                        <Label Text="{Binding Responsable}" FontSize="14"/>
+                        <Label Text="Progreso: " FontSize="13">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Progreso: " />
+                                    <Span Text="{Binding Progreso}" />
+                                    <Span Text=" %" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label Text="{Binding DuracionDias, StringFormat='Duración: {0} días'}" FontSize="13" />
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>
